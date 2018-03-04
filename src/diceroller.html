@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #b8b6b7;
+                font-family:'Courier New', Courier, monospace;
+                margin:2%;
+            }
+            p {
+                font-family:'Courier New', Courier, monospace;
+            }
+            .title {
+                font-size:30px;
+                margin-bottom: 10px;
+            }
+            .input {
+                border-style: none;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                background-color: #b8b6b7;
+                width:40px;
+                font-family:'Courier New', Courier, monospace;
+                font-size:16px;
+                text-align: center;                
+            }
+            button {
+                font-family:'Courier New', Courier, monospace;
+            }
+            .minus {
+                left:10%;   
+            }
+            .plus {
+                margin-right:10%;
+            }
+        </style>
+        <script type="text/javascript">
+            var dice = {"number":2, "sides":6};
+
+            function initialize() {
+                for (var key in dice) {
+                    document.getElementById(key).value = dice[key];
+                }
+            }
+
+            function increment(key) {
+                dice[key]++;
+                document.getElementById(key).value = dice[key];
+            }
+
+            function decrement(key) {
+                if (dice[key]>1){
+                    dice[key]--;
+                }
+                document.getElementById(key).value = dice[key];
+            }
+
+            function update(key, newValue) {
+                if (isInteger(newValue)) {
+                    if (newValue > 0)  {
+                        dice[key] = newValue;
+                    } else {
+                        dice[key] = 1;
+                    }
+                }
+                document.getElementById(key).value = dice[key];
+            }
+
+            function isInteger(x) {
+                return x % 1 === 0;
+            }
+
+            function rollDice() {
+                var max = 0;
+                var min = dice["sides"];
+                var total = 0;
+
+                for(var i=0; i<dice["number"]; i++) {
+                    var x = Math.floor((Math.random() * dice["sides"]) + 1);
+
+                    if (x < min) {
+                        min = x;
+                    }
+
+                    if (x > max) {
+                        max = x;
+                    }
+
+                    total += x;
+                }
+
+                document.getElementById("total").innerHTML = total;
+                document.getElementById("max").innerHTML = max;
+                document.getElementById("min").innerHTML = min;
+            }
+        </script>
+    </head>
+
+    <body onload="initialize()">
+        <p class="title">Dice Roller</p>
+        <div class="modifier" name="number-div">
+            Number of dice: 
+            <button type="button" class="minus" onclick="decrement('number')">-</button>
+            <input type="text" class="input" id="number" onchange="update(this.id, this.value)">
+            <button type="button" class="plus" onclick="increment('number')">+</button>
+        </div>
+
+        <div class="modifier" name="sides-div">
+            Sides per die: 
+            <button type="button" class="minus" onclick="decrement('sides')">-</button>
+            <input type="text" class="input" id="sides" onchange="update(this.id, this.value)">
+            <button type="button" class="plus" onclick="increment('sides')">+</button>
+        </div>
+
+        <button type="button" id="roll" onclick="rollDice()">Roll Dice</button>
+
+        <div name="results-div">
+            <p>Total:</p>
+            <p id="total"></p>
+            <p>Highest:</p>
+            <p id="max"></p>
+            <p>Lowest:</p>
+            <p id="min"></p>
+        </div>
+    </body>
+</html>
