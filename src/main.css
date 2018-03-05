@@ -1,0 +1,18 @@
+/*Navbar and main page stucture*/
+#main-content {
+	height: 90%;
+}
+#navbar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 10%;
+}
+.menu-item-image {
+	width: 20%;
+	height: 100%;
+	border-width: 2px;
+	padding-left: 1%;
+	padding-right: 1%;
+	display: inline-block;
+}
