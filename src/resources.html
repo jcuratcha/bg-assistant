@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Resource Tracker</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
         <style>
             body {
                 background-color: #b8b6b7;
@@ -69,7 +70,7 @@
         </script>
     </head>
     <body onload="initialize()">
-        <div>
+        <div id="main-content">
             <p class="title">Resources</p>
             <div class="resource" name="brick-div">
                 Brick: 
@@ -105,6 +106,13 @@
                 <input type="text" class="input" id="wood" onchange="update(this.id, this.value)">
                 <button type="button" class="plus" onclick="increment('wood')">+</button>
             </div>
+        </div>
+
+        <div id="navbar">
+            <a href="diceroller.html"><img src="../img/dice-six-faces-six.png" id="menu-dice" class="menu-item-image"></img></a>
+            <a href="resources.html"><img src="../img/wheat.png" id="menu-resource" class="menu-item-image"></img></a>
+            <a href="notes.html"><img src="../img/bookmarklet.png" id="menu-notes" class="menu-item-image"></img></a>
+            <a href="settings.html"><img src="../img/cog.png" id="menu-settings" class="menu-item-image"></img></a>
         </div>
     </body>
 </html>

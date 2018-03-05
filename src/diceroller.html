@@ -1,5 +1,7 @@
 <html>
     <head>
+        <title>Dice Roller</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
         <style>
             body {
                 background-color: #b8b6b7;
@@ -96,30 +98,39 @@
     </head>
 
     <body onload="initialize()">
-        <p class="title">Dice Roller</p>
-        <div class="modifier" name="number-div">
-            Number of dice: 
-            <button type="button" class="minus" onclick="decrement('number')">-</button>
-            <input type="text" class="input" id="number" onchange="update(this.id, this.value)">
-            <button type="button" class="plus" onclick="increment('number')">+</button>
+        <div id="main-content">
+            <p class="title">Dice Roller</p>
+            <div class="modifier" name="number-div">
+                Number of dice: 
+                <button type="button" class="minus" onclick="decrement('number')">-</button>
+                <input type="text" class="input" id="number" onchange="update(this.id, this.value)">
+                <button type="button" class="plus" onclick="increment('number')">+</button>
+            </div>
+
+            <div class="modifier" name="sides-div">
+                Sides per die: 
+                <button type="button" class="minus" onclick="decrement('sides')">-</button>
+                <input type="text" class="input" id="sides" onchange="update(this.id, this.value)">
+                <button type="button" class="plus" onclick="increment('sides')">+</button>
+            </div>
+
+            <button type="button" id="roll" onclick="rollDice()">Roll Dice</button>
+
+            <div name="results-div">
+                <p>Total:</p>
+                <p id="total"></p>
+                <p>Highest:</p>
+                <p id="max"></p>
+                <p>Lowest:</p>
+                <p id="min"></p>
+            </div>
         </div>
 
-        <div class="modifier" name="sides-div">
-            Sides per die: 
-            <button type="button" class="minus" onclick="decrement('sides')">-</button>
-            <input type="text" class="input" id="sides" onchange="update(this.id, this.value)">
-            <button type="button" class="plus" onclick="increment('sides')">+</button>
-        </div>
-
-        <button type="button" id="roll" onclick="rollDice()">Roll Dice</button>
-
-        <div name="results-div">
-            <p>Total:</p>
-            <p id="total"></p>
-            <p>Highest:</p>
-            <p id="max"></p>
-            <p>Lowest:</p>
-            <p id="min"></p>
+        <div id="navbar">
+            <a href="diceroller.html"><img src="../img/dice-six-faces-six.png" id="menu-dice" class="menu-item-image"></img></a>
+            <a href="resources.html"><img src="../img/wheat.png" id="menu-resource" class="menu-item-image"></img></a>
+            <a href="notes.html"><img src="../img/bookmarklet.png" id="menu-notes" class="menu-item-image"></img></a>
+            <a href="settings.html"><img src="../img/cog.png" id="menu-settings" class="menu-item-image"></img></a>
         </div>
     </body>
 </html>
