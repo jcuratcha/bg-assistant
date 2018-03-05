@@ -1,9 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Board Game Assistant</title>
-</head>
-<body>
+	<head>
+		<title>Board Game Assistant</title>
+		<style>
+	        body {
+	            background-color: #b8b6b7;
+	            font-family:'Courier New', Courier, monospace;
+	            margin:2%;
+	        }
+	        .title {
+	            font-family:'Courier New', Courier, monospace;
+	            font-size:30px;
+	            margin-bottom: 10px;
+	        }
+	        .resource {
+	            margin-bottom: 8px;
+	        }
+	        .input {
+	            border-style: none;
+	            border-bottom-style: solid;
+	            border-bottom-width: 1px;
+	            background-color: #b8b6b7;
+	            width:40px;
+	            font-family:'Courier New', Courier, monospace;
+	            font-size:16px;
+	            text-align: center;                
+	        }
+	        .minus {
+	            left:10%;
+	            font-family:'Courier New', Courier, monospace;
+	        }
+	        .plus {
+	            margin-right:10%;
+	            font-family:'Courier New', Courier, monospace;
+	        }
 
-</body>
+	        #main-content {
+	        	height: 90%;
+	        }
+	        #navbar {
+	        	position: absolute;
+	        	bottom: 0;
+	        	width: 100%;
+	        	height: 10%;
+	        }
+	        .menu-item-image {
+	        	width: 20%;
+	        	height: 100%;
+	        	border-width: 2px;
+	        	padding-left: 1%;
+	        	padding-right: 1%;
+	        	display: inline-block;
+	        }
+
+	    </style>
+	</head>
+	<body>
+		<div id="main-content">
+			<p>Welcome to the Generic Board Game Assistant!</p>
+		</div>
+
+		<div id="navbar">
+			<a href="diceroller.html"><img src="../img/dice-six-faces-six.png" id="menu-dice" class="menu-item-image"></img></a>
+			<a href="resources.html"><img src="../img/wheat.png" id="menu-resource" class="menu-item-image"></img></a>
+			<a href="notes.html"><img src="../img/bookmarklet.png" id="menu-notes" class="menu-item-image"></img></a>
+			<a href="settings.html"><img src="../img/cog.png" id="menu-settings" class="menu-item-image"></img></a>
+		</div>
+
+	</body>
 </html>
