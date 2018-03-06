@@ -4,43 +4,28 @@
 		<title>Notes</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
 	    <style>
-	        body {
-	            background-color: #b8b6b7;
-	            font-family:'Courier New', Courier, monospace;
-	            margin:2%;
-	        }
-	        p {
-	            font-family:'Courier New', Courier, monospace;
-	        }
-	        .title {
-	            font-size:30px;
-	            margin-bottom: 10px;
-	        }
-	        .input {
-	            border-style: none;
-	            border-bottom-style: solid;
-	            border-bottom-width: 1px;
-	            background-color: #b8b6b7;
-	            width:40px;
-	            font-family:'Courier New', Courier, monospace;
-	            font-size:16px;
-	            text-align: center;                
-	        }
-	        button {
-	            font-family:'Courier New', Courier, monospace;
-	        }
-	        .minus {
-	            left:10%;   
-	        }
-	        .plus {
-	            margin-right:10%;
+	        textarea {
+	        	width: 94%;
+	        	height: 80%;
+	        	overflow: hidden;
 	        }
 	    </style>
+        <script type="text/javascript">
+        	function initialize() {
+        		var notes = sessionStorage.getItem("notes");
+        		document.getElementById("notes-box").value = notes;
+        	}
+
+        	function saveNotes() {
+                var notes = document.getElementById("notes-box").value;
+                sessionStorage.setItem("notes", notes);
+        	}
+        </script>
 	</head>
-<body>
+	<body onload="initialize()" onunload="saveNotes()">
 		<div id="main-content">
 		 	<p class="title">Notes</p>
-			<textarea></textarea>
+			<textarea id="notes-box" autofocus="true" placeholder="Write your notes here!"></textarea>
 		</div>
 
 		<div id="navbar">
@@ -49,5 +34,5 @@
 			<a href="notes.html"><img src="../img/bookmarklet.png" id="menu-notes" class="menu-item-image"></img></a>
 			<a href="settings.html"><img src="../img/cog.png" id="menu-settings" class="menu-item-image"></img></a>
 		</div>
-</body>
+	</body>
 </html>
