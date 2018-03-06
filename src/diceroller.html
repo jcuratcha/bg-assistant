@@ -40,18 +40,28 @@
 
             function initialize() {
                 for (var key in dice) {
+                    var existingKey = sessionStorage.getItem(key);
+                    if (existingKey) {
+                        dice[key] = existingKey;
+                    }
                     document.getElementById(key).value = dice[key];
                 }
+
+                document.getElementById("total").innerHTML = sessionStorage.getItem("total");
+                document.getElementById("max").innerHTML = sessionStorage.getItem("max");
+                document.getElementById("min").innerHTML = sessionStorage.getItem("min");
             }
 
             function increment(key) {
                 dice[key]++;
+                sessionStorage.setItem(key, dice[key]);
                 document.getElementById(key).value = dice[key];
             }
 
             function decrement(key) {
                 if (dice[key]>1){
                     dice[key]--;
+                    sessionStorage.setItem(key, dice[key]);
                 }
                 document.getElementById(key).value = dice[key];
             }
@@ -91,8 +101,11 @@
                 }
 
                 document.getElementById("total").innerHTML = total;
+                sessionStorage.setItem("total", total);
                 document.getElementById("max").innerHTML = max;
+                sessionStorage.setItem("max", max);
                 document.getElementById("min").innerHTML = min;
+                sessionStorage.setItem("min", min);
             }
         </script>
     </head>
