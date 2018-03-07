@@ -14,9 +14,9 @@
                     document.getElementById(key).value = dice[key];
                 }
 
-                document.getElementById("total").innerHTML = sessionStorage.getItem("total");
-                document.getElementById("max").innerHTML = sessionStorage.getItem("max");
-                document.getElementById("min").innerHTML = sessionStorage.getItem("min");
+                document.getElementById("total").innerHTML = "Total: " + sessionStorage.getItem("total");
+                document.getElementById("max").innerHTML = "Highest: " + sessionStorage.getItem("max");
+                document.getElementById("min").innerHTML = "Lowest: " + sessionStorage.getItem("min");
             }
 
             function increment(key) {
@@ -67,11 +67,11 @@
                     total += x;
                 }
 
-                document.getElementById("total").innerHTML = total;
+                document.getElementById("total").innerHTML = "Total: " + total;
                 sessionStorage.setItem("total", total);
-                document.getElementById("max").innerHTML = max;
+                document.getElementById("max").innerHTML = "Highest: " + max;
                 sessionStorage.setItem("max", max);
-                document.getElementById("min").innerHTML = min;
+                document.getElementById("min").innerHTML = "Lowest: " + min;
                 sessionStorage.setItem("min", min);
             }
         </script>
@@ -97,12 +97,9 @@
             <button type="button" id="roll" onclick="rollDice()">Roll Dice</button>
 
             <div name="results-div">
-                <p>Total:</p>
-                <p id="total"></p>
-                <p>Highest:</p>
-                <p id="max"></p>
-                <p>Lowest:</p>
-                <p id="min"></p>
+                <p id="total">Total:</p>
+                <p id="max">Highest:</p>
+                <p id="min">Lowest:</p>
             </div>
         </div>
 
