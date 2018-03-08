@@ -2,6 +2,29 @@
     <head>
         <title>Dice Roller</title>
         <link rel="stylesheet" type="text/css" href="main.css">
+        <style type="text/css">
+            .center-button-section {
+                display: flex;
+                justify-content: center;
+            }
+
+            table {
+                width: 95%;
+            }
+
+            td span {
+                float: right;
+                flex-wrap: nowrap;
+            }
+
+            .button-section {
+                width: 50%;
+            }
+
+            .button-label {
+                width: 50%;
+            }
+        </style>
         <script type="text/javascript">
             var dice = {"number":2, "sides":6};
             var rollData = {"total": 0, "max": 0, "min": 0};
@@ -88,21 +111,37 @@
     <body onload="initialize()">
         <div id="main-content">
             <p class="title">Dice Roller</p>
-            <div class="modifier" name="number-div">
-                Number of dice: 
-                <button type="button" class="minus" onclick="decrement('number')">-</button>
-                <input type="text" class="input" id="number" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('number')">+</button>
-            </div>
 
-            <div class="modifier" name="sides-div">
-                Sides per die: 
-                <button type="button" class="minus" onclick="decrement('sides')">-</button>
-                <input type="text" class="input" id="sides" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('sides')">+</button>
-            </div>
+            <table>
+                <tr>
+                    <td class="button-label">
+                        <p>Number of dice: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('number')">-</button>
+                            <input type="text" class="input" id="number" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('number')">+</button>
+                        </span>
+                    </td>  
+                </tr>
+                <tr>
+                    <td class="button-label">
+                        <p>Sides per die: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('sides')">-</button>
+                            <input type="text" class="input" id="sides" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('sides')">+</button>
+                        </span>
+                    </td>
+                </tr>
+            </table>
 
-            <button type="button" id="roll" onclick="rollDice()">Roll Dice</button>
+            <div class="center-button-section">
+                <button type="button" id="roll" onclick="rollDice()">Roll Dice!</button>
+            </div>
 
             <div name="results-div">
                 <p id="total">Total:</p>

@@ -45,11 +45,9 @@ body {
     text-align: center;                
 }
 .minus {
-    left:10%;
     font-family:'Courier New', Courier, monospace;
 }
 .plus {
-    margin-right:10%;
     font-family:'Courier New', Courier, monospace;
 }
 

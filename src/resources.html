@@ -2,6 +2,29 @@
     <head>
         <title>Resource Tracker</title>
         <link rel="stylesheet" type="text/css" href="main.css">
+        <style type="text/css">
+            .center-button-section {
+                display: flex;
+                justify-content: center;
+            }
+
+            table {
+                width: 95%;
+            }
+
+            td span {
+                float: right;
+                flex-wrap: nowrap;
+            }
+
+            .button-section {
+                width: 50%;
+            }
+
+            .button-label {
+                width: 50%;
+            }
+        </style>
         <script type="text/javascript">
             var counters = {"brick":0, "ore":0, "sheep":0, "wheat":0, "wood":0};
 
@@ -50,40 +73,69 @@
     <body onload="initialize()">
         <div id="main-content">
             <p class="title">Resources</p>
-            <div class="resource" name="brick-div">
-                Brick: 
-                <button type="button" class="minus" onclick="decrement('brick')">-</button>
-                <input type="text" class="input" id="brick" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('brick')">+</button>
-            </div>
 
-            <div class="resource" name="ore-div">
-                Ore: 
-                <button type="button" class="minus" onclick="decrement('ore')">-</button>
-                <input type="text" class="input" id="ore" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('ore')">+</button>
-            </div>
-
-            <div class="resource" name="sheep-div">
-                Sheep: 
-                <button type="button" class="minus" onclick="decrement('sheep')">-</button>
-                <input type="text" class="input" id="sheep" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('sheep')">+</button>
-            </div>
-
-            <div class="resource" name="wheat-div">
-                Wheat: 
-                <button type="button" class="minus" onclick="decrement('wheat')">-</button>
-                <input type="text" class="input" id="wheat" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('wheat')">+</button>
-            </div>
-
-            <div class="resource" name="wood-div">
-                Wood: 
-                <button type="button" class="minus" onclick="decrement('wood')">-</button>
-                <input type="text" class="input" id="wood" onchange="update(this.id, this.value)">
-                <button type="button" class="plus" onclick="increment('wood')">+</button>
-            </div>
+            <table>
+                <tr>
+                    <td class="button-label">
+                        <p>Brick: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('brick')">-</button>
+                            <input type="text" class="input" id="brick" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('brick')">+</button>
+                        </span>
+                    </td>  
+                </tr>
+                <tr>
+                    <td class="button-label">
+                        <p>Ore: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('ore')">-</button>
+                            <input type="text" class="input" id="ore" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('ore')">+</button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="button-label">
+                        <p>Sheep: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('sheep')">-</button>
+                            <input type="text" class="input" id="sheep" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('sheep')">+</button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="button-label">
+                        <p>Wheat: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('wheat')">-</button>
+                            <input type="text" class="input" id="wheat" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('wheat')">+</button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="button-label">
+                        <p>Wood: </p>
+                    </td>
+                    <td class="button-section">
+                        <span>
+                            <button type="button" class="minus" onclick="decrement('wood')">-</button>
+                            <input type="text" class="input" id="wood" onchange="update(this.id, this.value)">
+                            <button type="button" class="plus" onclick="increment('wood')">+</button>
+                        </span>
+                    </td>
+                </tr>
+            </table>
 
             <button onclick="addNewResource()">Add New Resource</button>
         </div>
