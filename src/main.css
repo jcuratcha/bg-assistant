@@ -55,6 +55,7 @@ body {
 
 button {
     font-family:'Courier New', Courier, monospace;
+    padding: 1em;
 }
 
 p {
