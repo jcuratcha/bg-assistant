@@ -2,16 +2,6 @@
     <head>
         <title>Dice Roller</title>
         <link rel="stylesheet" type="text/css" href="main.css">
-        <style type="text/css">
-            table {
-                width: 95%;
-            }
-
-            td span {
-                float: right;
-                flex-wrap: nowrap;
-            }
-        </style>
         <script type="text/javascript">
             var dice = {"number":2, "sides":6};
             var rollData = {"total": 0, "max": 0, "min": 0};
@@ -128,7 +118,8 @@
 
             <div class="center-button-section">
                 <button type="button" id="roll" onclick="rollDice()">
-                    <p class="label-text">Roll Dice!
+                    <p class="label-text">
+                        Roll Dice!
                     </p>
                 </button>
             </div>

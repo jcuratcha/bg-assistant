@@ -7,8 +7,9 @@
 	        textarea {
 	        	width: 94%;
 	        	height: 80%;
-	        	overflow: hidden;
-	        	font-size: 2.5em;
+	        	font-size: 2.75em;
+	        	outline: none;
+	        	resize: none;
 	        }
 	    </style>
         <script type="text/javascript">
@@ -26,7 +27,7 @@
 	<body onload="initialize()" onunload="saveNotes()">
 		<div id="main-content">
 		 	<p class="title">Notes</p>
-			<textarea id="notes-box" autofocus="true" placeholder="Write your notes here!"></textarea>
+			<textarea id="notes-box" autofocus placeholder="Write your notes here!"></textarea>
 		</div>
 
 		<div id="navbar">
