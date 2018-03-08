@@ -3,11 +3,6 @@
         <title>Resource Tracker</title>
         <link rel="stylesheet" type="text/css" href="main.css">
         <style type="text/css">
-            .center-button-section {
-                display: flex;
-                justify-content: center;
-            }
-
             table {
                 width: 95%;
             }
@@ -15,14 +10,6 @@
             td span {
                 float: right;
                 flex-wrap: nowrap;
-            }
-
-            .button-section {
-                width: 50%;
-            }
-
-            .button-label {
-                width: 50%;
             }
         </style>
         <script type="text/javascript">
@@ -137,7 +124,9 @@
                 </tr>
             </table>
 
-            <button onclick="addNewResource()">Add New Resource</button>
+            <div class="center-button-section">
+                <button onclick="addNewResource()">Add New Resource</button>
+            </div>
         </div>
 
         <div id="navbar">
