@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="main.css">
         <script type="text/javascript">
             var dice = {"number":2, "sides":6};
+            var rollData = {"total": 0, "max": 0, "min": 0};
 
             function initialize() {
                 for (var key in dice) {
@@ -14,9 +15,16 @@
                     document.getElementById(key).value = dice[key];
                 }
 
-                document.getElementById("total").innerHTML = "Total: " + sessionStorage.getItem("total");
-                document.getElementById("max").innerHTML = "Highest: " + sessionStorage.getItem("max");
-                document.getElementById("min").innerHTML = "Lowest: " + sessionStorage.getItem("min");
+                for (var key in rollData) {
+                    var existingKey = sessionStorage.getItem(key);
+                    if (existingKey) {
+                        rollData[key] = existingKey;
+                    }
+                }
+
+                document.getElementById("total").innerHTML = "Total: " + rollData["total"];
+                document.getElementById("max").innerHTML = "Highest: " + rollData["max"];
+                document.getElementById("min").innerHTML = "Lowest: " + rollData["min"];
             }
 
             function increment(key) {
