@@ -28,8 +28,11 @@ body {
 }
 .title {
     font-family:'Courier New', Courier, monospace;
-    font-size:30px;
+    font-size:3.5em;
     margin-bottom: 10px;
+}
+.label-text {
+    font-size: 2.5em;
 }
 .resource {
     margin-bottom: 8px;
@@ -41,19 +44,22 @@ body {
     background-color: #b8b6b7;
     width:40px;
     font-family:'Courier New', Courier, monospace;
-    font-size:16px;
+    font-size:3em;
     text-align: center;                
 }
-.minus {
+.minus .plus {
     font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
 }
-.plus {
-    font-family:'Courier New', Courier, monospace;
+
+.button-text {
+    font-size: 2em;
 }
 
 button {
-    font-family:'Courier New', Courier, monospace;
-    padding: 1em;
+    font-family:'Courier New', Courier, monospace; 
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 p {

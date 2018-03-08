@@ -102,38 +102,41 @@
             <table>
                 <tr>
                     <td class="button-label">
-                        <p>Number of dice: </p>
+                        <p class="label-text">Number of dice: </p>
                     </td>
                     <td class="button-section">
                         <span>
-                            <button type="button" class="minus" onclick="decrement('number')">-</button>
+                            <button type="button" class="minus" onclick="decrement('number')"><p class="button-text">-</p></button>
                             <input type="text" class="input" id="number" onchange="update(this.id, this.value)">
-                            <button type="button" class="plus" onclick="increment('number')">+</button>
+                            <button type="button" class="plus" onclick="increment('number')"><p class="button-text">+</p></button>
                         </span>
                     </td>  
                 </tr>
                 <tr>
                     <td class="button-label">
-                        <p>Sides per die: </p>
+                        <p class="label-text">Sides per die: </p>
                     </td>
                     <td class="button-section">
                         <span>
-                            <button type="button" class="minus" onclick="decrement('sides')">-</button>
+                            <button type="button" class="minus" onclick="decrement('sides')"><p class="button-text">-</p></button>
                             <input type="text" class="input" id="sides" onchange="update(this.id, this.value)">
-                            <button type="button" class="plus" onclick="increment('sides')">+</button>
+                            <button type="button" class="plus" onclick="increment('sides')"><p class="button-text">+</p></button>
                         </span>
                     </td>
                 </tr>
             </table>
 
             <div class="center-button-section">
-                <button type="button" id="roll" onclick="rollDice()">Roll Dice!</button>
+                <button type="button" id="roll" onclick="rollDice()">
+                    <p class="label-text">Roll Dice!
+                    </p>
+                </button>
             </div>
 
             <div name="results-div">
-                <p id="total">Total:</p>
-                <p id="max">Highest:</p>
-                <p id="min">Lowest:</p>
+                <p class="label-text" id="total">Total:</p>
+                <p class="label-text" id="max">Highest:</p>
+                <p class="label-text" id="min">Lowest:</p>
             </div>
         </div>
 
