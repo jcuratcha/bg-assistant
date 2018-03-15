@@ -1,15 +1,11 @@
 /*Navbar and main page stucture*/
 #main-content {
 	height: 90%;
-    width: 100%;
-    position: absolute;
-    top: 0;
 }
 #navbar {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+    position: absolute;
 	height: 10%;
+    bottom: 0;
 }
 .menu-item-image {
 	width: 20%;
@@ -24,12 +20,14 @@
 body {
     background-color: #b8b6b7;
     font-family:'Courier New', Courier, monospace;
-    margin:2%;
+    height: 100%;
+    margin: 0;
 }
 .title {
-    font-family:'Courier New', Courier, monospace;
-    font-size:3.75em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5em;
     margin-bottom: 10px;
+    margin-top: 0px;
 }
 .label-text {
     font-size: 2.75em;
@@ -41,19 +39,28 @@ body {
     border-style: none;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    background-color: #b8b6b7;
-    width:40px;
+    background-color: #ffffff;
+    max-width: 2em;
     font-family:'Courier New', Courier, monospace;
-    font-size:3.25em;
-    text-align: center;                
-}
-.minus .plus {
-    font-family:'Courier New', Courier, monospace;
+    font-size: 3.5em;
     font-weight: bold;
+    text-align: center;
+}
+
+
+.result {
+    background-color: #ffffff;
+    padding: 3px;
+}
+
+.result-row {
+    padding-top: 15px;
+    font-size: 2em;
 }
 
 .button-text {
-    font-size: 2.5em;
+    font-size: 3.5em;
+    font-weight: bold;
 }
 
 table {
@@ -70,6 +77,7 @@ button {
     font-family:'Courier New', Courier, monospace; 
     padding-left: 2.25em;
     padding-right: 2.25em;
+    font-weight: bold;
 }
 
 p {
@@ -83,6 +91,13 @@ p {
     margin-bottom: 0.5em;
 }
 
+textarea {
+    width: 90%;
+    height: 7.5em;
+    font-size: 2.75em;
+    outline: none;
+    resize: none;
+}
 
 .button-section {
     width: 50%;
@@ -90,4 +105,10 @@ p {
 
 .button-label {
     width: 50%;
+}
+
+.minus .plus {
+    font-family:'Courier New', Courier, monospace;
+    width: 10em;
+    height: 10em;
 }

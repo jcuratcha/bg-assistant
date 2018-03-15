@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Dice Roller</title>
+        <meta name="viewport" content="user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="main.css">
         <script type="text/javascript">
             var dice = {"number":2, "sides":6};
@@ -22,9 +23,9 @@
                     }
                 }
 
-                document.getElementById("total").innerHTML = "Total: " + rollData["total"];
-                document.getElementById("max").innerHTML = "Highest: " + rollData["max"];
-                document.getElementById("min").innerHTML = "Lowest: " + rollData["min"];
+                document.getElementById("total").innerHTML = rollData["total"];
+                document.getElementById("max").innerHTML = rollData["max"];
+                document.getElementById("min").innerHTML = rollData["min"];
             }
 
             function increment(key) {
@@ -75,11 +76,11 @@
                     total += x;
                 }
 
-                document.getElementById("total").innerHTML = "Total: " + total;
+                document.getElementById("total").innerHTML = total;
                 sessionStorage.setItem("total", total);
-                document.getElementById("max").innerHTML = "Highest: " + max;
+                document.getElementById("max").innerHTML = max;
                 sessionStorage.setItem("max", max);
-                document.getElementById("min").innerHTML = "Lowest: " + min;
+                document.getElementById("min").innerHTML = min;
                 sessionStorage.setItem("min", min);
             }
         </script>
@@ -125,9 +126,9 @@
             </div>
 
             <div name="results-div">
-                <p class="label-text" id="total">Total:</p>
-                <p class="label-text" id="max">Highest:</p>
-                <p class="label-text" id="min">Lowest:</p>
+                <div class="result-row"><span class="label-text">Total: </span><span class="label-text result" id="total"></span></div>
+                <div class="result-row"><span class="label-text">Highest: </span><span class="label-text result" id="max"></span></div>
+                <div class="result-row"><span class="label-text">Lowest: </span><span class="label-text result" id="min"></span></div>
             </div>
         </div>
 
