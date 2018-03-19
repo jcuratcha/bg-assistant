@@ -35,15 +35,15 @@ public class Time {
 
     public String getDateTimeFileFormat() {
         String time = getDate() + " -- ";
-        time += Integer.toString(getHour()) + "_";
-        time += Integer.toString(getMinute()) + "_";
+        time += Integer.toString(getHour()) + "-";
+        time += Integer.toString(getMinute()) + "-";
         time += Integer.toString(getSecond());
         return time;
     }
 
     public String getDate() {
-        String date = Integer.toString(cal.get(Calendar.MONTH)+1) + "_";  // +1 to Month because Jan = 0 and Dec = 11, Why???
-        date += Integer.toString(cal.get(Calendar.DATE)) + "_";
+        String date = Integer.toString(cal.get(Calendar.MONTH)+1) + "-";  // +1 to Month because Jan = 0 and Dec = 11, Why???
+        date += Integer.toString(cal.get(Calendar.DATE)) + "-";
         date += Integer.toString(cal.get(Calendar.YEAR));
         return date;
     }

@@ -11,11 +11,12 @@ public class TurnTracker {
         filename = new Time().getDateTimeFileFormat();
         System.out.println("Default filename of output file will be \"" + filename + " {subtitle}\"");
         System.out.print("Add subtitle (leave blank if no)? ");
-        if (input.nextLine().trim().equals("") == false) {
-            filename += " " + input.nextLine().trim();
+        String subtitle = input.nextLine();
+        if (subtitle.trim().equals("") == false) {
+            filename += " " + subtitle;
         }
         filename += ".csv";
-        
+
         // get number of players
         while (players < 0) {
             System.out.print("Number of players (default = 3): ");
@@ -44,7 +45,7 @@ public class TurnTracker {
         ArrayList<String> results = new ArrayList<String>();
 
         // add headers to csv file
-        results.add("turn,player,start,end,turn");
+        results.add("\"turn\",\"player\",\"start\",\"end\",\"turn\"");
 
         do {
             turnCounter++;
@@ -62,11 +63,11 @@ public class TurnTracker {
             Time endTime = new Time();
 
             // format results into csv line and add to arraylist
-            String newLine = Integer.toString(turnCounter) + ",";
-            newLine += Integer.toString(playerCounter) + ",";
-            newLine += startTime.getTime() + ",";
-            newLine += endTime.getTime() + ",";
-            newLine += endTime.getDifference(startTime);
+            String newLine = "\"" + Integer.toString(turnCounter) + "\"" + ",";
+            newLine += "\"" + Integer.toString(playerCounter) + "\"" + ",";
+            newLine += "\"" + startTime.getTime() + "\"" + ",";
+            newLine += "\"" + endTime.getTime() + "\"" + ",";
+            newLine += "\"" + endTime.getDifference(startTime) + "\"";
             results.add(newLine);
 
             // check if user enter p to pause the timer
